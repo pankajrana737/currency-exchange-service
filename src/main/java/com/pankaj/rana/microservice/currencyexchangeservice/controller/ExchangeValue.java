@@ -2,13 +2,23 @@ package com.pankaj.rana.microservice.currencyexchangeservice.controller;
 
 import java.math.BigDecimal;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+import com.sun.istack.Nullable;
+
+@Entity
 public class ExchangeValue {
 
+	@Id
 	private Long id;
+	@Column(name = "Currency_from")
 	private String from;
-
+	@Column(name = "Currency_to")
 	private String to;
 	private BigDecimal convertionMultiple;
+	@Nullable
 	private int port;
 	public int getPort() {
 		return port;
